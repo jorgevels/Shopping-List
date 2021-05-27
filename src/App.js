@@ -2,7 +2,8 @@ import React from "react";
 import FormInput from "./components/Form";
 import List from "./components/List";
 import Footer from "./components/Footer/index";
-import { DataProvider } from "./components/DataProvider";
+import { DataProvider } from "./utils/DataProvider";
+
 import Layout from "./components/Layout";
 
 function App() {

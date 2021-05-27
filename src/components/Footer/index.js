@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { DataContext } from "../DataProvider";
+/* import { DataContext } from "../DataProvider"; */
+import { DataContext } from "../../utils/DataProvider";
 
 export default function Footer() {
   const [checkAll, setCheckAll] = useState(false);

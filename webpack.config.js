@@ -28,9 +28,9 @@ module.exports = {
 
     new WebpackPwaManifestPlugin({
       //Le pasamos el objeto de configuracion
-      name: "FincaApp ",
-      shortname: "FincaApp",
-      description: "FincaApp permite gestionar la administracion de tu finca.",
+      name: "MercandoApp ",
+      shortname: "Mercando",
+      description: "Mercando permite crear tus listas de compras.",
       background_color: "#77c043",
       theme_color: "#0D5C63",
 

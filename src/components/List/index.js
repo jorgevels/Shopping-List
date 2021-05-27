@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ListItem from "../ListItem";
-import { DataContext } from "../DataProvider";
+/* import { DataContext } from "../DataProvider"; */
+import { DataContext } from "../../utils/DataProvider";
 
 export default function List() {
   const [list, setList] = useContext(DataContext);
