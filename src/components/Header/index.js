@@ -30,14 +30,18 @@ function Header() {
           <span>Finca</span>0
         </p> */}
         <Header_icons>
-          <p>{Cantidad().length}</p>
-          <FiList size={SIZE} />
+          <div>
+            <p>{Cantidad().length}</p>
+            <FiList size={SIZE} />
+          </div>
+
           <div>
             <p> {newTodosComplete().length}</p>
             <FiShoppingCart size={SIZE} />
           </div>
         </Header_icons>
-        <h2>Mercando</h2>
+        <h3>Mercando</h3>
+        <h3>Promosiones</h3>
       </StyledHeader>
     </>
   );

@@ -67,7 +67,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #fefefe;
+    background: yellow;
     height: 100vh;
     margin: 0 auto;
   

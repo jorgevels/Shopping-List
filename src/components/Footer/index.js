@@ -1,6 +1,10 @@
 import React, { useContext, useState } from "react";
 /* import { DataContext } from "../DataProvider"; */
 import { DataContext } from "../../utils/DataProvider";
+import { MdDelete } from "react-icons/md";
+
+const SIZE = "23px";
+const COLOR = "red";
 
 export default function Footer() {
   const [checkAll, setCheckAll] = useState(false);
@@ -27,10 +31,12 @@ export default function Footer() {
   return (
     <>
       {todos.length === 0 ? (
-        <h2>Welcome! Crea tu lista de mercado</h2>
+        <h2>
+          Bienvenido ha almacenes Exito!<br></br> Crea tu lista de compras
+        </h2>
       ) : (
         <div className="row">
-          <label htmlFor="all">
+          {/* <label htmlFor="all">
             <input
               type="checkbox"
               name="all"
@@ -39,10 +45,10 @@ export default function Footer() {
               checked={checkAll}
             />
             Todos
-          </label>
+          </label> */}
           {/*  <p>tienes en 🛒 {newTodosComplete().length} Articulos</p> */}
           <button id="delete" onClick={deleteTodo}>
-            Delete
+            <MdDelete size={SIZE} color={COLOR} />
           </button>
         </div>
       )}

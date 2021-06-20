@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { MdEdit, MdModeEdit, MdSave } from "react-icons/md";
+import { List, Input } from "./styles";
+
+const SIZE = "25px";
+const COLOR = "orange";
 
 export default function ListItem({
   todo,
@@ -38,7 +43,14 @@ export default function ListItem({
 
   if (onEdit) {
     return (
-      <li>
+      <div className="listaX">
+        <Input
+          type="checkbox"
+          id={id}
+          checked={todo.complete}
+          onChange={() => checkCompleteTodos(id)}
+        />
+
         <input
           type="text"
           id="editValue"
@@ -61,34 +73,55 @@ export default function ListItem({
           onChange={(e) => setEditValueUnidad(e.target.value.toLowerCase())}
         />
 
-        <button onClick={() => handleSave(id)}>Actualizar</button>
-      </li>
+        <button onClick={() => handleSave(id)}>
+          <MdSave size={SIZE} color={COLOR} />
+        </button>
+      </div>
     );
   } else {
     return (
-      <li>
-        <label htmlFor={id} className={todo.complete ? "active" : ""}>
-          <input
+      <div className="lista">
+        <div
+          htmlFor={id}
+          className={todo.complete ? "active" : ""}
+          className="itemsx"
+        >
+          <Input
             type="checkbox"
             id={id}
             checked={todo.complete}
             onChange={() => checkCompleteTodos(id)}
           />
+        </div>
+
+        <div
+          htmlFor={id}
+          className={todo.complete ? "active" : ""}
+          className="items"
+        >
           {todo.articuloName}
-        </label>
+        </div>
 
-        <label htmlFor={id} className={todo.complete ? "active" : ""}>
+        <div
+          htmlFor={id}
+          className={todo.complete ? "active" : ""}
+          className="items"
+        >
           {todo.cantidadName}
-        </label>
+        </div>
 
-        <label htmlFor={id} className={todo.complete ? "active" : ""}>
+        <div
+          htmlFor={id}
+          className={todo.complete ? "active" : ""}
+          className="items"
+        >
           {todo.unidadName}
-        </label>
+        </div>
 
         <button disabled={todo.complete} onClick={handleOnEdit}>
-          Editar
+          <MdModeEdit size={SIZE} color={COLOR} />
         </button>
-      </li>
+      </div>
     );
   }
 }

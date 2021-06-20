@@ -1,5 +1,10 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { DataContext } from "../../utils/DataProvider";
+import { Select, Input, Table, Tables } from "./styles";
+import { MdAddBox, MdEdit, MdAlarmOn } from "react-icons/md";
+
+const SIZE = "30px";
+const COLOR = "green";
 
 export default function FormInput() {
   const [list, setList] = useContext(DataContext);
@@ -7,6 +12,18 @@ export default function FormInput() {
   const [cantidadName, setCantidadName] = useState("");
   const [unidadName, setUnidadName] = useState("");
   const todoInput = useRef();
+
+  const [checkAll, setCheckAll] = useState(false);
+  const [todos, setTodos] = useContext(DataContext);
+
+  const handleCheckAll = () => {
+    const newTodos = [...todos];
+    newTodos.forEach((todo) => {
+      todo.complete = !checkAll;
+    });
+    setTodos(newTodos);
+    setCheckAll(!checkAll);
+  };
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -32,28 +49,36 @@ export default function FormInput() {
 
   return (
     <>
-      <form>
-        {/* <label>Nombre del articulo</label>
-        <label>Cantida</label>
-        <label>Unidad</label> */}
-        <div className="table-row">
-          <div className="item">
-            <div className="idName">Nombre del Articulo</div>
-          </div>
-          <div className="item">
-            <div className="idCant">Cantidad</div>
-          </div>
-          <div className="item">
-            <div className="idUnid">Unidad</div>
-          </div>
+      <Table>
+        <div className="item">
+          <div className="idName">Selecion</div>
+        </div>
+        <div className="item">
+          <div className="idName">Nombre del Articulo</div>
+        </div>
+        <div className="item">
+          <div className="idCant">Cantidad</div>
+        </div>
+        <div className="item">
+          <div className="idUnid">Unidad</div>
         </div>
 
-        <button type="submit">Agregar</button>
-      </form>
+        <div className="item">
+          <MdAlarmOn size={SIZE} color={COLOR} />
+        </div>
+      </Table>
 
       <form autoComplete="off" onSubmit={addTodo}>
-        <div className="table-artiulos">
-          <input
+        <Tables>
+          <Input
+            type="checkbox"
+            name="all"
+            id="all"
+            onChange={handleCheckAll}
+            checked={checkAll}
+          />
+
+          <Input
             type="text"
             name="articulo"
             id="articulo"
@@ -63,29 +88,44 @@ export default function FormInput() {
             value={articuloName}
             onChange={(e) => setArticuloName(e.target.value.toLowerCase())}
           />
-          <input
-            type="text"
-            name="cantidad"
-            id="cantidad"
-            required
-            ref={todoInput}
-            placeholder="Ingresa la cantidad"
-            value={cantidadName}
-            onChange={(e) => setCantidadName(e.target.value.toLowerCase())}
-          />
-          <input
-            type="text"
-            name="unidad"
-            id="unidad"
-            required
-            ref={todoInput}
-            placeholder="Ingresa la cantidad"
-            value={unidadName}
-            onChange={(e) => setUnidadName(e.target.value.toLowerCase())}
-          />
-        </div>
 
-        <button type="submit">Agregar</button>
+          <Select
+            value={cantidadName}
+            required
+            onChange={(e) => setCantidadName(e.target.value.toLowerCase())}
+          >
+            <option value=""> Elige la cantidad </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </Select>
+
+          <Select
+            value={unidadName}
+            onChange={(e) => setUnidadName(e.target.value)}
+          >
+            <option value=""> Elige la cantidad </option>
+            <option value="LB">LB</option>
+            <option value="KL">KL</option>
+            <option value="Unidad">Unidad</option>
+            <option value="PK">PK</option>
+            <option value="BL">BL</option>
+            <option value="Caja">Caja</option>
+          </Select>
+
+          <button type="submit">
+            <MdAddBox size={SIZE} color={COLOR} />
+          </button>
+        </Tables>
       </form>
     </>
   );

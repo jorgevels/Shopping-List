@@ -47,7 +47,7 @@ export default function List() {
   };
 
   return (
-    <ul>
+    <div className="table-lista">
       {list.map((todo, index) => (
         <ListItem
           todo={todo}
@@ -59,6 +59,6 @@ export default function List() {
           handleEditUnidad={handleEditUnidad}
         />
       ))}
-    </ul>
+    </div>
   );
 }
