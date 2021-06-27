@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdEdit, MdModeEdit, MdSave } from "react-icons/md";
-import { List, Input } from "./styles";
+import { List, Input, Button } from "./styles";
 
 const SIZE = "25px";
 const COLOR = "orange";
@@ -51,21 +51,21 @@ export default function ListItem({
           onChange={() => checkCompleteTodos(id)}
         />
 
-        <input
+        <Input
           type="text"
           id="editValue"
           value={editValueArticulo}
           name="editValue"
           onChange={(e) => setEditValueArticulo(e.target.value.toLowerCase())}
         />
-        <input
+        <Input
           type="text"
           id="editValue"
           value={editValueCantidad}
           name="editValue"
           onChange={(e) => setEditValueCantidad(e.target.value.toLowerCase())}
         />
-        <input
+        <Input
           type="text"
           id="editValue"
           value={editValueUnidad}
@@ -73,9 +73,9 @@ export default function ListItem({
           onChange={(e) => setEditValueUnidad(e.target.value.toLowerCase())}
         />
 
-        <button onClick={() => handleSave(id)}>
+        <Button onClick={() => handleSave(id)}>
           <MdSave size={SIZE} color={COLOR} />
-        </button>
+        </Button>
       </div>
     );
   } else {
@@ -94,33 +94,35 @@ export default function ListItem({
           />
         </div>
 
-        <div
-          htmlFor={id}
-          className={todo.complete ? "active" : ""}
-          className="items"
-        >
-          {todo.articuloName}
+        <div className="items">
+          <div
+            htmlFor={id}
+            className="items"
+            className={todo.complete ? "active" : ""}
+          >
+            {todo.articuloName}
+          </div>
         </div>
 
-        <div
-          htmlFor={id}
-          className={todo.complete ? "active" : ""}
-          className="items"
-        >
-          {todo.cantidadName}
+        <div className="items">
+          <div htmlFor={id} className={todo.complete ? "active" : ""}>
+            {todo.cantidadName}
+          </div>
         </div>
 
-        <div
-          htmlFor={id}
-          className={todo.complete ? "active" : ""}
-          className="items"
-        >
-          {todo.unidadName}
+        <div className="items">
+          <div
+            htmlFor={id}
+            className="items"
+            className={todo.complete ? "active" : ""}
+          >
+            {todo.unidadName}
+          </div>
         </div>
 
-        <button disabled={todo.complete} onClick={handleOnEdit}>
+        <Button disabled={todo.complete} onClick={handleOnEdit}>
           <MdModeEdit size={SIZE} color={COLOR} />
-        </button>
+        </Button>
       </div>
     );
   }

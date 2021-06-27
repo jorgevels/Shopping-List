@@ -23,12 +23,6 @@ function Header() {
   return (
     <>
       <StyledHeader>
-        {/*  <img className="logo" src={LOGO} alt="Finca Logo" /> */}
-        {/* <Link to="/">
-        </Link> */}
-        {/* <p>
-          <span>Finca</span>0
-        </p> */}
         <Header_icons>
           <div>
             <p>{Cantidad().length}</p>
@@ -41,7 +35,7 @@ function Header() {
           </div>
         </Header_icons>
         <h3>Mercando</h3>
-        <h3>Promosiones</h3>
+        <h3>Promocio</h3>
       </StyledHeader>
     </>
   );

@@ -36,6 +36,7 @@ const Header_icons = styled.div`
   & div {
     margin: 0 0 0 10px;
     padding: 0;
+    margin-bottom: -22px;
     text-align: center;
   }
 `;

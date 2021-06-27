@@ -13,10 +13,27 @@ const List = styled.select`
 const Input = styled.input`
   width: 100%;
   height: 28px;
-  margin-bottom: 15px;
+  ${"" /* margin-bottom: 15px; */}
+  margin-top:10px;
   padding-left: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
+  background: orange;
+  color: red;
 `;
 
-export { List, Input };
+const Button = styled.button`
+  display: flex;
+  height: 25px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border: none;
+
+  margin-top: 7px;
+
+  justify-content: center;
+  text-align: center;
+`;
+
+export { List, Input, Button };

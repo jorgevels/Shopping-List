@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { DataContext } from "../../utils/DataProvider";
-import { Select, Input, Table, Tables } from "./styles";
+import { Select, Input, Table, Tables, Button } from "./styles";
 import { MdAddBox, MdEdit, MdAlarmOn } from "react-icons/md";
 
 const SIZE = "30px";
@@ -122,9 +122,15 @@ export default function FormInput() {
             <option value="Caja">Caja</option>
           </Select>
 
-          <button type="submit">
+          {/* <button type="submit">
             <MdAddBox size={SIZE} color={COLOR} />
-          </button>
+          </button> */}
+          <Button type="submit">
+            <MdAddBox size={SIZE} color={COLOR} />
+          </Button>
+          {/* <div>
+            <MdAddBox size={SIZE} color={COLOR} />
+          </div> */}
         </Tables>
       </form>
     </>
