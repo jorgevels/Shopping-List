@@ -32,12 +32,14 @@ export default function Welcome() {
     <>
       {todos.length === 0 ? (
         <h2>
-          Bienvenido ha almacenes Exito!<br></br> Crea tu lista de compras
+          Bienvenido a almacenes Exito!<br></br> Crea tu lista de compras
         </h2>
       ) : (
         <ContainerFooter>
           <Button id="delete" onClick={deleteTodo}>
-            <MdDelete size={SIZE} color={COLOR} />
+            {/*  <MdDelete size={SIZE} color={COLOR} /> */}
+            {/* <MdDelete size={SIZE} color={COLOR} /> */}
+            Delete
           </Button>
         </ContainerFooter>
       )}

@@ -6,11 +6,7 @@ const ContainerFooter = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  ${
-    "" /* margin-top: 20px;
-  margin-bottom: 100px; */
-  }
-  bottom:50px;
+  bottom: 41px;
   position: fixed;
   z-index: 2000;
   margin-top: 20px;
@@ -18,19 +14,13 @@ const ContainerFooter = styled.div`
 
 const Button = styled.button`
   display: flex;
-  height: 5px;
-
+  justify-content: center;
+  height: 20px;
+  width: 60px;
+  background: red;
   color: white;
   cursor: pointer;
   border: none;
-
-  margin-top: 7px;
-
-  ${
-    "" /* justify-content: center;
-  text-align: center;
-  align-items: center; */
-  }
 `;
 
 export { ContainerFooter, Button };

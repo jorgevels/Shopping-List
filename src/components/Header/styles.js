@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../GlobalStyle";
+import { colors, above } from "../../GlobalStyle";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -11,11 +11,26 @@ const StyledHeader = styled.header`
   position: fixed;
   background: #f1d302;
 
-  h2 {
+  & h3 {
     text-align: center;
-    color: blue;
+
+    font-size: 20px;
+    ${above.small`
+    font-size:10px;
+    
+    
+  `};
+    ${above.mediu`
+    
+    font-size: 18px;
+  `};
+    ${above.mediumL`
+    
+    font-size: 20px;
+  `};
   }
 `;
+
 const Header_icons = styled.div`
   display: flex;
   text-align: center;
@@ -24,7 +39,6 @@ const Header_icons = styled.div`
     color: white;
     margin-top: -8px;
     font-size: 10px;
-
     width: 15px;
     margin-left: 8px;
     position: absolute;

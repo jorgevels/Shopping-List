@@ -18,8 +18,9 @@ code {
 }
 .App{
   width: 100%;
-  height: 100vh;
- /*  height: 100%; */
+  /* height: 100vh; */
+  /* height: 100vh; */
+  min-height: 100vh;
   box-shadow: 0 2px 6px #555;
   margin: 0;
   padding: 1px;
@@ -32,6 +33,114 @@ h1{
   letter-spacing: 2px;
   font-weight: 900;
   color: #666;
+}
+
+.header-container-promo {
+  max-width: 150px;
+  position: absolute;
+  text-align: center;
+  padding-left: 63%;
+  position: fixed;
+}
+.header-anuncio-promo p {
+  background-color: #f1d302;
+  border-radius: 3px;
+  text-align: center;
+  color: black;
+  width: 130px;
+  margin: 0;
+  font-weight: 600;
+  margin-top: -17px;
+  position: fixed;
+}
+
+.header-container-promo-list {
+  background-color: #fd3e81;
+  border-radius: 3px;
+  margin-top: 3px;
+
+  width: 145px;
+  height: 20px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 20px;
+  overflow: hidden;
+  position: fixed;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  animation: cambiar 17s infinite;
+}
+
+.container-promo p {
+  text-align: left;
+}
+
+@keyframes cambiar {
+  0% {
+    margin-top: 0;
+  }
+  5% {
+    margin-top: 0;
+  }
+  12% {
+    margin-top: -20px;
+  }
+  15% {
+  }
+  20% {
+    margin-top: -40px;
+  }
+
+  25% {
+  }
+  30% {
+    margin-top: -60px;
+  }
+
+  35% {
+  }
+  40% {
+    margin-top: -80px;
+  }
+
+  45% {
+  }
+  50% {
+    margin-top: -100px;
+  }
+
+  55% {
+  }
+  60% {
+    margin-top: -120px;
+  }
+  65% {
+  }
+  70% {
+    margin-top: -140px;
+  }
+
+  75% {
+    margin-top: -160px;
+  }
+  80% {
+  }
+  85% {
+    margin-top: -180px;
+  }
+  90% {
+  }
+  100% {
+    margin-top: -200px;
+  }
+  95% {
+  }
+  105% {
+    margin-top: -220px;
+  }
 }
 
 
@@ -50,20 +159,10 @@ form .table-artiulos {
 }
 
 
-/* form{
-  width: 100%;
-  display: flex;
-  margin-top: 5px;
-} */
 
-/* form button{
-  flex: 1;
-  background-color: transparent;
-  letter-spacing: 2px;
-  cursor: pointer;
-} */
 .table-lista {
   margin-top: 108px;
+  margin-bottom: 80px;
 }
 
 .table-lista .lista{
@@ -74,10 +173,11 @@ form .table-artiulos {
     1fr minmax(160px, 1fr) minmax(40px, 1fr)
     minmax(10px, 1fr) minmax(10px, 1fr);
   text-align: left;
-  /* margin-top: 115px; */
+  
 }
 .lista {
   margin-top: 20px;
+ 
 }
 
 
@@ -90,13 +190,8 @@ form .table-artiulos {
     1fr minmax(160px, 1fr) minmax(40px, 1fr)
     minmax(10px, 1fr) minmax(10px, 1fr);
   text-align: left;
-  
 }
 
-/* .lista button{
- background: transparent;
- border: 0.5px solid white;
-} */
 
 .items {
   padding: 2px;
@@ -117,6 +212,8 @@ form .table-artiulos {
   opacity: 0.5;
   text-decoration: line-through;
   background-color: chartreuse;
+/*   color: chartreuse; */
+  padding-left: 5px;
 }
 
 /* .table-lista .lista input,
@@ -138,6 +235,7 @@ form .table-artiulos {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+
 }
 .row #delete{
   background: crimson;

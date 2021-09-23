@@ -8,6 +8,18 @@ const Select = styled.select`
   padding-left: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
+  ${above.small`
+  font-size:10px;
+  
+  `}
+  ${above.mediu`
+  font-size:10px;
+  
+  `}
+  ${above.mediumL`
+  font-size:13px;
+  
+  `}
 `;
 
 const Input = styled.input`
@@ -17,9 +29,22 @@ const Input = styled.input`
   padding-left: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
+
+  ${above.small`
+  font-size:10px;
+  
+  `}
+  ${above.mediu`
+  font-size:10px;
+  
+  `}
+  ${above.mediumL`
+  font-size:13px;
+  color:blue;
+  `}
 `;
 
-const Table = styled.table`
+const Container = styled.form`
   display: grid;
   grid-template-columns:
     1fr minmax(160px, 1fr) minmax(40px, 1fr)
@@ -30,22 +55,23 @@ const Table = styled.table`
   width: 100%;
   height: 20px;
   margin-top: 55px;
+  line-height: 25px;
   position: fixed;
-  ${
-    "" /* & button {
-    background: transparent;
-    border: 0.5px solid white;
-  } */
-  }
+  ${above.small`
+  font-size:10px;
+  
+  `}
+  ${above.mediu`
+  font-size:13px;
+  
+  `}
+  ${above.mediumL`
+  font-size:18px;
+  
+  `}
 `;
 
-/* const Item = styled.item`
-  background: #f1d302;
-  border: 0.5px solid white;
-  text-align-last: center;
-`; */
-
-const Tables = styled.table`
+const Containers = styled.div`
   display: grid;
   grid-template-columns:
     1fr minmax(160px, 1fr) minmax(40px, 1fr)
@@ -58,20 +84,10 @@ const Tables = styled.table`
   height: 20px;
   margin-top: 86px;
   position: fixed;
-  ${
-    "" /* & button {
-    border: none;
-    
-    background: red;
-    margin-bottom: 10px;
-    padding: 0;
-    margin: 0;
-  } */
-  }
 `;
 
 const Button = styled.button`
-  height:25px;
+  height: 25px;
   background: transparent;
   color: white;
   cursor: pointer;
@@ -86,4 +102,4 @@ const Button = styled.button`
   
 } */
 
-export { Select, Input, Table, Tables, Button };
+export { Select, Input, Container, Containers, Button };
