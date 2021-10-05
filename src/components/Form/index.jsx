@@ -1,13 +1,16 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
-import { DataContext } from "../../utils/DataProvider";
+import { DataContext } from "@context/DataProvider";
 import { Select, Input, Container, Containers, Button } from "./styles";
 import { MdAddBox, MdEdit, MdAlarmOn } from "react-icons/md";
+
+/* import ListArticulos from "../ListArticulos"; */
 
 const SIZE = "30px";
 const COLOR = "green";
 
 export default function FormInput() {
   const [list, setList] = useContext(DataContext);
+
   const [articuloName, setArticuloName] = useState("");
   const [cantidadName, setCantidadName] = useState("");
   const [unidadName, setUnidadName] = useState("");
@@ -15,6 +18,9 @@ export default function FormInput() {
 
   const [checkAll, setCheckAll] = useState(false);
   const [todos, setTodos] = useContext(DataContext);
+  /* const [checkAll, setCheckAll] = useContext(DataContext); */
+
+  /* const checkAll = () => false; */
 
   const handleCheckAll = () => {
     const newTodos = [...todos];
@@ -36,6 +42,7 @@ export default function FormInput() {
         complete: false,
       },
     ]);
+
     setArticuloName("");
     setCantidadName("");
     setUnidadName("");
@@ -75,14 +82,13 @@ export default function FormInput() {
             name="all"
             id="all"
             onChange={handleCheckAll}
-            checked={checkAll}
           />
 
           <Input
             type="text"
             name="articulo"
             id="articulo"
-            list="LisArticulos"
+            list={"LisArticulos"}
             ref={todoInput}
             placeholder="Ingresa un articulo"
             value={articuloName}
@@ -113,7 +119,7 @@ export default function FormInput() {
             onChange={(e) => setUnidadName(e.target.value)}
           >
             <option value=""> </option>
-            <option value="LB">LB</option>
+            <option value="LBx">LB</option>
             <option value="KL">KL</option>
             <option value="Unidad">Unidad</option>
             <option value="PK">PK</option>

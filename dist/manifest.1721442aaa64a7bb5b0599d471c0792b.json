@@ -1,0 +1,23 @@
+{
+  "icons": [
+    {
+      "src": "auto/icon_512x512.67e0da2c04cc4d57de96ad9187d37280.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/icon_192x192.74c830c39a85ae7847374d708881b15f.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "MercandoApp ",
+  "short_name": "MercandoApp ",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "shortname": "Mercando",
+  "description": "Mercando permite crear tus listas de compras.",
+  "background_color": "#77c043",
+  "theme_color": "#0D5C63"
+}

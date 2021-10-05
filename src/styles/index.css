@@ -143,6 +143,11 @@ ul {
   }
 }
 
+.ListPriceArticulos {
+  text-align: center;
+  background-color: #ffe66d;
+  
+}
 
 .item {
   background: #f1d302;

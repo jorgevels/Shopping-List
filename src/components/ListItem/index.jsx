@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdEdit, MdModeEdit, MdSave } from "react-icons/md";
 import { List, Input, Button } from "./styles";
-import "../../index.css";
+import "@styles/index.css";
 
 const SIZE = "25px";
 const COLOR = "orange";

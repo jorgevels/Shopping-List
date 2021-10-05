@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StyledHeader, Header_icons } from "./styles";
-import { DataContext } from "../../utils/DataProvider";
+import { DataContext } from "@context/DataProvider";
 import { FiList, FiShoppingCart } from "react-icons/fi";
-import "../../index.css";
+import "@styles/index.css";
+import Logo from "@assets/favicon.png";
+import Title from "@components/Title";
+/* import ListPrice from "../ListPrice"; */
 
 const SIZE = "25px";
 
@@ -32,12 +35,28 @@ function Header() {
             <FiShoppingCart size={SIZE} />
           </div>
         </Header_icons>
+        <div className="Title">
+          {/* <p>Mercando</p> */}
+          <p>...</p>
+          {/* <Link to="/">
+            <Title title="Mercando v2" />
+            🧧
+          </Link> */}
+          <Link to="/">
+            <p>
+              <span>Merc</span>
+              ando
+            </p>
+          </Link>
+        </div>
 
-        <h3>Mercando</h3>
+        {/* <h3>Mercando</h3> */}
         {/*  <h3>Promocio</h3> */}
         <div className="header-container-promo ">
           <div className="header-anuncio-promo">
             <p>Promociones</p>
+
+            <Link to="/listPrice">💰</Link>
           </div>
 
           <div className="header-container-promo-list">

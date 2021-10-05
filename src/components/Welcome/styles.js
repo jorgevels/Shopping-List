@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { above, colors } from "../../GlobalStyle";
+import { above, colors } from "@styles/GlobalStyle";
 
 const ContainerFooter = styled.div`
   display: flex;
@@ -21,6 +21,9 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   border: none;
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 export { ContainerFooter, Button };

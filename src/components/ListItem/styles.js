@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { above, colors } from "../../GlobalStyle";
+import { above, colors } from "@styles/GlobalStyle";
 
 const List = styled.select`
   width: 100%;

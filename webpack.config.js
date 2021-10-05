@@ -4,18 +4,34 @@ const WebpackPwaManifestPlugin = require("webpack-pwa-manifest");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    home: "./src/index.js",
+    header: "./src/Header/index.js",
+  },
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].bundle.js",
   },
 
   // Este elemento resulve las extensiones que vamos a utilizar
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".tsx", ".js", ".jsx"],
+    alias: {
+      "@components": path.resolve(__dirname, "src/components/"),
+      "@context": path.resolve(__dirname, "src/context/"),
+      "@containers": path.resolve(__dirname, "src/containers/"),
+      "@routes": path.resolve(__dirname, "src/routes/"),
+      "@styles": path.resolve(__dirname, "src/styles/"),
+      "@assets": path.resolve(__dirname, "src/assets/"),
+    },
   },
 
   // Se añaden los plugins que necesitamos
@@ -84,7 +100,42 @@ module.exports = {
         },
       ],
     }),
+    new CleanWebpackPlugin(),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [["optipng", { optimizationLevel: 5 }]],
+      },
+    }),
   ],
+
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          chunks: "all",
+          name: "commons",
+          filename: "assets/common.[chunkhash].js",
+          reuseExistingChunk: true,
+          enforce: true,
+          priority: 20,
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "all",
+          name: "vendors",
+          filename: "assets/vendor.[chunkhash].js",
+          reuseExistingChunk: true,
+          enforce: true,
+          priority: 10,
+        },
+      },
+    },
+  },
 
   module: {
     rules: [
@@ -116,6 +167,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset",
+      },
+      /* {
         test: /\.(png|gif|jpg|svg)$/,
         use: [
           {
@@ -123,6 +178,11 @@ module.exports = {
             options: { name: "assets/[hash].[ext]" },
           },
         ],
+      }, */
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: "/node_modules/",
       },
     ],
   },

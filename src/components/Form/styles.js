@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { above, colors } from "../../GlobalStyle";
+import { above, colors } from "@styles/GlobalStyle";
 
 const Select = styled.select`
   width: 100%;
@@ -95,6 +95,9 @@ const Button = styled.button`
   margin-top: -2px;
   justify-content: center;
   text-align: center;
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 /* form .table-artiulos {
