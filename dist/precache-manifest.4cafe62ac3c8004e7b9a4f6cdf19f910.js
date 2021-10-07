@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9e271bdf130be55dfb27e8ca9cd7c634",
+    "revision": "53ed6c6134df8d207f1df93682b59400",
     "url": "auto./index.html"
   },
   {
@@ -14,14 +14,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "autoassets/common.9c3b6497f9f870f57361.js.LICENSE.txt"
   },
   {
-    "revision": "7ddebc2f446dd30eb529",
+    "revision": "6a1f0afc666d056e15be",
     "url": "autoassets/home.css"
   },
   {
-    "url": "autoassets/vendor.f950c616e757fcea0a22.js"
+    "url": "autoassets/vendor.da72f1fb6a41b324a650.js"
   },
   {
-    "url": "autoassets/vendor.f950c616e757fcea0a22.js.LICENSE.txt"
+    "url": "autoassets/vendor.da72f1fb6a41b324a650.js.LICENSE.txt"
   },
   {
     "revision": "250049eb60b2ff181651e946bf7e7154",
@@ -276,11 +276,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "autoead41a13226f245ea675.png"
   },
   {
-    "revision": "36e58ba8ee02b69878e3",
+    "revision": "0b2d5d3b9b1feda55dde",
     "url": "autoheader.bundle.js"
   },
   {
-    "revision": "7ddebc2f446dd30eb529",
+    "revision": "6a1f0afc666d056e15be",
     "url": "autohome.bundle.js"
   },
   {

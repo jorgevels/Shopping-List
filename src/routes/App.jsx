@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "@containers/Home";
 import { DataProvider } from "@context/DataProvider";
 import Layout from "@components/Layout";
-import { hot } from "react-hot-loader/root";
+/* import { hot } from "react-hot-loader/root"; */
 /* import ListPrice from "@components/ListPrice"; */
 
 const AsyncCheckoutContainer = React.lazy(() =>
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default hot(App);
+export default App;

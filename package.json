@@ -43,8 +43,6 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
     "mini-css-extract-plugin": "^2.3.0",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
     "stylus": "^0.54.8",
     "stylus-loader": "^5.0.0",
     "terser-webpack-plugin": "^5.2.4",
