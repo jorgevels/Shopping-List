@@ -56,7 +56,7 @@ function Header() {
           <div className="header-anuncio-promo">
             <p>Promociones</p>
 
-            <Link to="/listPrice">💰</Link>
+            <Link to="/price">💰</Link>
           </div>
 
           <div className="header-container-promo-list">
