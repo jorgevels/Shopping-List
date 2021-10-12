@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 
-const API = "https://us-central1-gndx-fake-api.cloudfunctions.net/api";
+/* const corsAnywhere = "https://cors-anywhere.herokuapp.com/"; */
 
-const useInitialState = () => {
-  const [products, setProducts] = useState([]);
+const useTvShowsApi = (url) => {
+  const [tvShows, setTvShows] = useState([]);
 
-  useEffect(async () => {
-    const response = await axios(API);
-    setProducts(response.data);
+  useEffect(() => {
+    window
+      .fetch(url)
+      .then((response) => response.json())
+      .then((data) => setTvShows(data));
   }, []);
 
-  return {
-    products,
-  };
+  return tvShows;
 };
 
-export default useInitialState;
+export default useTvShowsApi;
