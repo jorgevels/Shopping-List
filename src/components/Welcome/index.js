@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "@context/DataProvider";
 import { MdDelete } from "react-icons/md";
-import { ContainerFooter, Button } from "./styles";
+import { ContainerFooter, Title, Button } from "./styles";
 
 const SIZE = "23px";
 const COLOR = "red";
@@ -20,13 +20,14 @@ export default function Welcome() {
   return (
     <>
       {todos.length === 0 ? (
-        <h2>
-          Bienvenido a almacenes Exito 🎁!<br></br> Crea tu lista de compras
-        </h2>
+        <Title>
+          Bienvenido a almacenes Exito 🎁!<br></br> Con esta App podras crear tu
+          lista de compras y verificar los precios de los productos mas
+          destacados.
+        </Title>
       ) : (
         <ContainerFooter>
           <Button disabled={""} id="delete" onClick={deleteTodo}>
-            {/*  <MdDelete size={SIZE} color={COLOR} /> */}
             Delete
           </Button>
         </ContainerFooter>

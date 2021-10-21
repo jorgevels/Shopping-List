@@ -4,9 +4,6 @@ import { StyledHeader, Header_icons } from "./styles";
 import { DataContext } from "@context/DataProvider";
 import { FiList, FiShoppingCart } from "react-icons/fi";
 import "@styles/index.css";
-import Logo from "@assets/favicon.png";
-import Title from "@components/Title";
-/* import ListPrice from "../ListPrice"; */
 
 const SIZE = "25px";
 
@@ -45,7 +42,7 @@ function Header() {
           <Link to="/">
             <p>
               <span>Merc</span>
-              ando
+              andoxxx
             </p>
           </Link>
         </div>

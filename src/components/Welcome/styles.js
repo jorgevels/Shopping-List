@@ -12,6 +12,11 @@ const ContainerFooter = styled.div`
   margin-top: 20px;
 `;
 
+const Title = styled.h2`
+  padding-top: 80px;
+  color: black;
+`;
+
 const Button = styled.button`
   display: flex;
   justify-content: center;
@@ -26,4 +31,4 @@ const Button = styled.button`
   }
 `;
 
-export { ContainerFooter, Button };
+export { ContainerFooter, Title, Button };

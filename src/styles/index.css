@@ -256,13 +256,3 @@ h2{
   color: crimson;
   margin-top: 70px;
 }
-.ListPrice {
-  
-  margin-top: 15px;
-  background-color: #fd3e81;
-  text-align: center;
-}
-.ListPrice p{
-  color: blue;
-  font-size: 20px;
-}

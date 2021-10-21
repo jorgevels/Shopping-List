@@ -71,6 +71,12 @@ const Container = styled.form`
   `}
 `;
 
+const Button_list = styled.div`
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 const Containers = styled.div`
   display: grid;
   grid-template-columns:
@@ -105,4 +111,4 @@ const Button = styled.button`
   
 } */
 
-export { Select, Input, Container, Containers, Button };
+export { Select, Input, Container, Containers, Button, Button_list };

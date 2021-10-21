@@ -1,7 +1,8 @@
 import React from "react";
 import ListPrice from "../../components/ListPrice";
+import PageLoading from "../../components/PageLoading";
 import useInitialState from "../../hooks/useInitialState";
-import useTvShowsApi from "../../hooks/useInitialState";
+import Container_lista from "./styles";
 
 /* const API = "https://us-central1-gndx-fake-api.cloudfunctions.net/api"; */
 
@@ -13,20 +14,15 @@ const Price = () => {
 
   console.log(initialState);
   return initialState.length === 0 ? (
-    <h1>Cargando...</h1>
+    <PageLoading />
   ) : (
     <>
-      <div className="carousel">
-        <div className="carousel__container">
-          {
-            <div>
-              {initialState.products.map((item) => (
-                <ListPrice key={item.id} {...item} />
-              ))}
-            </div>
-          }
-        </div>
-      </div>
+      <Container_lista>
+        <h3>Lista de precios</h3>
+        {initialState.products.map((item) => (
+          <ListPrice key={item.id} {...item} />
+        ))}
+      </Container_lista>
     </>
   );
 };

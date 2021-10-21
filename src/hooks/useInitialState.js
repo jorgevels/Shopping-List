@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 /* const corsAnywhere = "https://cors-anywhere.herokuapp.com/"; */
 
-const useTvShowsApi = (url) => {
+const useInitialState = (url) => {
   const [tvShows, setTvShows] = useState([]);
 
   useEffect(() => {
@@ -15,4 +15,4 @@ const useTvShowsApi = (url) => {
   return tvShows;
 };
 
-export default useTvShowsApi;
+export default useInitialState;

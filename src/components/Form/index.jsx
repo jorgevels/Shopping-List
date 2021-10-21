@@ -1,12 +1,20 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { DataContext } from "@context/DataProvider";
-import { Select, Input, Container, Containers, Button } from "./styles";
-import { MdAddBox, MdEdit, MdAlarmOn } from "react-icons/md";
-
+import {
+  Select,
+  Input,
+  Container,
+  Containers,
+  Button,
+  Button_list,
+} from "./styles";
+import { MdAddBox, MdEdit, MdAlarmOn, MdListAlt } from "react-icons/md";
+import { BsCardList } from "react-icons/bs";
 /* import ListArticulos from "../ListArticulos"; */
 
 const SIZE = "30px";
-const COLOR = "green";
+const COLOR = "#fd3e81";
 
 export default function FormInput() {
   const [list, setList] = useContext(DataContext);
@@ -71,8 +79,12 @@ export default function FormInput() {
         </div>
 
         <div className="item">
-          <MdAlarmOn size={SIZE} color={COLOR} />
+          <Link to="/price">
+            <BsCardList size={SIZE} color={COLOR} />
+          </Link>
         </div>
+        {/* <Button_list>
+        </Button_list> */}
       </Container>
 
       <form autoComplete="off" onSubmit={addTodo}>
