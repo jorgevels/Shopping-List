@@ -48,8 +48,8 @@ module.exports = {
       name: "MercandoApp ",
       shortname: "Mercando",
       description: "Mercando permite crear tus listas de compras.",
-      background_color: "#77c043",
-      theme_color: "#0D5C63",
+      background_color: "#f8e808",
+      theme_color: "#b1a",
 
       //Array iconos de la aplicacion
       icons: [
@@ -69,8 +69,8 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: "./src/assets/favicon.png",
       favicons: {
-        background: "#77c043",
-        theme_color: "#0D5C63",
+        background: "#f8e808",
+        theme_color: "#b1a",
       },
     }),
 
