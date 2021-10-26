@@ -18,14 +18,18 @@ const Title = styled.h2`
 `;
 
 const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  height: 20px;
-  width: 60px;
-  background: red;
-  color: white;
+  width: 6rem;
+  margin: 0 2px;
+  padding: 0.2rem 0;
+  border-radius: 25px;
+  background: ${colors.danger};
+  color: #fff;
+  border-color: transparent;
   cursor: pointer;
-  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
   &:active {
     transform: scale(0.9);
   }

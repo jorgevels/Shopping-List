@@ -31,11 +31,11 @@ const Input = styled.input`
   border-radius: 4px;
 
   ${above.small`
-  font-size:10px;
+  font-size:13px;
   
   `}
   ${above.mediu`
-  font-size:10px;
+  font-size:13px;
   
   `}
   ${above.mediumL`

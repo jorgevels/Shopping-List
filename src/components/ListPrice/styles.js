@@ -5,7 +5,8 @@ const StyledList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fd3e81;
+  background-color: #f7fff7;
+  ${"" /*   background: linear-gradient(#f7fff7, #ffe66d); */}
 `;
 
 const Name_articulos = styled.div`

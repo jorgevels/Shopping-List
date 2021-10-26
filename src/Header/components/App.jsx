@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { StyledHeader, Header_icons } from "./styles";
+import { StyledHeader, Header_icons, Title } from "./styles";
 import { DataContext } from "@context/DataProvider";
 import { FiList, FiShoppingCart } from "react-icons/fi";
 import "@styles/index.css";
+import Logo from "../../assets/favicon.png";
 
 const SIZE = "25px";
 
@@ -32,15 +33,14 @@ const App = () => {
             <FiShoppingCart size={SIZE} />
           </div>
         </Header_icons>
-        <div className="Title">
+        {/* <div className="Title">
+        </div> */}
+        <Title>
           <Link to="/">
-            <p>
-              <span>Merc</span>
-              ando
-            </p>
-            <h3>🎁</h3>
+            <p>Mercando</p>
+            {/*  <img className="Logo_header" src={Logo} alt="logo" /> */}
           </Link>
-        </div>
+        </Title>
 
         <div className="header-container-promo ">
           <div className="header-anuncio-promo">

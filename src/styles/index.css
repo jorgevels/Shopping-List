@@ -12,6 +12,7 @@
   
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -34,6 +35,10 @@ h1{
   font-weight: 900;
   color: #666;
 }
+.Logo-header {
+  width: 20px;
+  border-radius: 40px;
+}
 
 .header-container-promo {
   max-width: 150px;
@@ -54,6 +59,7 @@ h1{
   position: fixed;
 }
 
+
 .header-container-promo-list {
   background-color: #fd3e81;
   border-radius: 3px;
@@ -73,6 +79,7 @@ ul {
   padding: 0;
   animation: cambiar 17s infinite;
 }
+
 
 .container-promo p {
   text-align: left;
@@ -204,7 +211,7 @@ form .table-artiulos {
   text-align: left;
   align-content: center;
   line-height: 2.3;
-   padding-left: 10px;
+   /* padding-left: 10px; */
    
 }
 
@@ -214,12 +221,19 @@ form .table-artiulos {
 }
 
 .table-lista .lista .active{
+  opacity: 0.7;
+  text-decoration: line-through;
+  background-color: chartreuse;
+  color: #fd3e81;
+  padding-left: -1px;
+}
+
+/* lista .active{
   opacity: 0.5;
   text-decoration: line-through;
   background-color: chartreuse;
-/*   color: chartreuse; */
-  padding-left: 5px;
-}
+  padding-left: -1px;
+} */
 
 /* .table-lista .lista input,
 .row input{

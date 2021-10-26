@@ -29,16 +29,23 @@ const StyledHeader = styled.header`
     font-size: 20px;
   `};
   }
+
+  & img {
+    width: 27px;
+    border-radius: 40px;
+  }
 `;
 
 const Header_icons = styled.div`
   display: flex;
   text-align: center;
   padding-inline-start: 20%;
+
   & p {
     color: white;
     margin-top: -8px;
     font-size: 10px;
+
     width: 15px;
     margin-left: 8px;
     position: absolute;
@@ -54,5 +61,12 @@ const Header_icons = styled.div`
     text-align: center;
   }
 `;
+const Title = styled.h3`
+  p {
+    font-size: 25px;
+    font-family: "Shadows Into Light", cursive;
+    color: ${colors.obscure};
+  }
+`;
 
-export { StyledHeader, Header_icons };
+export { StyledHeader, Header_icons, Title };
