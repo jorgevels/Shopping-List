@@ -14,7 +14,7 @@ const ContainerFooter = styled.div`
 
 const Title = styled.h2`
   padding-top: 80px;
-  color: black;
+  color: ${colors.obscure};
 `;
 
 const Button = styled.button`

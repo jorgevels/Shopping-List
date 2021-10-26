@@ -13,12 +13,9 @@ const StyledHeader = styled.header`
 
   & h3 {
     text-align: center;
-
     font-size: 20px;
     ${above.small`
     font-size:10px;
-    
-    
   `};
     ${above.mediu`
     
@@ -55,12 +52,25 @@ const Header_icons = styled.div`
     text-align: center;
   }
   & div {
-    margin: 0 0 0 10px;
+    ${"" /*  margin: 0 0 0 10px; */}
     padding: 0;
     margin-bottom: -22px;
     text-align: center;
   }
+  ${above.small`
+    padding-inline-start: 4%;
+   
+  `};
+  ${above.mediu`
+    
+    padding-inline-start: 6%;
+  `};
+  ${above.mediumL`
+    
+    padding-inline-start: 25%;
+  `};
 `;
+
 const Title = styled.h3`
   p {
     font-size: 25px;

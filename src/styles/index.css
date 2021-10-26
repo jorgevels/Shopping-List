@@ -174,7 +174,7 @@ form .table-artiulos {
 
 .table-lista {
   margin-top: 108px;
-  margin-bottom: 80px;
+  margin-bottom: 85px;
 }
 
 .table-lista .lista{
@@ -211,6 +211,7 @@ form .table-artiulos {
   text-align: left;
   align-content: center;
   line-height: 2.3;
+  color: #1b1b25;
    /* padding-left: 10px; */
    
 }
@@ -224,8 +225,9 @@ form .table-artiulos {
   opacity: 0.7;
   text-decoration: line-through;
   background-color: chartreuse;
+  border-radius: 5px;
   color: #fd3e81;
-  padding-left: -1px;
+  /* padding-left: -1px; */
 }
 
 /* lista .active{
