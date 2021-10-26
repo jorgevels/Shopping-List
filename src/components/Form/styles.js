@@ -8,6 +8,7 @@ const Select = styled.select`
   padding-left: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
+  text-align: center;
   ${above.small`
   font-size:10px;
   
@@ -55,7 +56,7 @@ const Container = styled.form`
   width: 100%;
   height: 20px;
   margin-top: 55px;
-  line-height: 25px;
+  line-height: 27px;
   position: fixed;
   ${above.small`
   font-size:10px;

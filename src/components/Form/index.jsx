@@ -124,6 +124,18 @@ export default function FormInput() {
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
           </Select>
 
           <Select
@@ -131,23 +143,19 @@ export default function FormInput() {
             onChange={(e) => setUnidadName(e.target.value)}
           >
             <option value=""> </option>
-            <option value="LBx">LB</option>
+            <option value="LB">LB</option>
             <option value="KL">KL</option>
             <option value="Unidad">Unidad</option>
             <option value="PK">PK</option>
             <option value="BL">BL</option>
             <option value="Caja">Caja</option>
+            <option value="LT">LT</option>
+            <option value="CB">CB</option>
           </Select>
 
-          {/* <button type="submit">
-            <MdAddBox size={SIZE} color={COLOR} />
-          </button> */}
           <Button type="submit">
             <MdAddBox size={SIZE} color={COLOR} />
           </Button>
-          {/* <div>
-            <MdAddBox size={SIZE} color={COLOR} />
-          </div> */}
         </Containers>
       </form>
       <datalist id="LisArticulos">
