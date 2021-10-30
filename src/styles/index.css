@@ -204,6 +204,11 @@ form .table-artiulos {
   text-align: left;
 }
 
+.items .active {
+    padding-left: 10px;
+    /* border: 2px solid #a4fd3f; */
+    
+ }
 
 .items {
   padding: 2px;
@@ -212,9 +217,8 @@ form .table-artiulos {
   align-content: center;
   line-height: 2.3;
   color: #1b1b25;
-   /* padding-left: 10px; */
-   
 }
+ 
 
 .itemsx {
   margin: 0;
@@ -227,8 +231,8 @@ form .table-artiulos {
   background-color: chartreuse;
   border-radius: 5px;
   color: #fd3e81;
-  /* padding-left: -1px; */
 }
+
 
 /* lista .active{
   opacity: 0.5;

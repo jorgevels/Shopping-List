@@ -16,5 +16,6 @@ export const Nav = styled.nav`
   z-index: 1000;
   & h3 {
     color: white;
+    font-size: 12px;
   }
 `;

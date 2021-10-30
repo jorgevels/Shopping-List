@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import { DataContext } from "@context/DataProvider";
 import { MdDelete } from "react-icons/md";
 import { ContainerFooter, Title, Button } from "./styles";
-
-const SIZE = "23px";
+/* import SweetAlert from "sweetalert-react" */ const SIZE = "23px";
 const COLOR = "red";
 
 export default function Welcome() {
