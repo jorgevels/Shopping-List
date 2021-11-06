@@ -1,7 +1,13 @@
 import React from "react";
-import { StyledList, Name_articulos, Price_articulos } from "./styles";
+import {
+  StyledList,
+  ListaContainer,
+  Name_articulos,
+  Price_articulos,
+  Button,
+} from "./styles";
 
-const ListPrice = ({ title, price }) => {
+const ListPrice = ({ image, title, price, promotion }) => {
   let value = price;
 
   const formatterPeso = new Intl.NumberFormat("es-CO", {
@@ -13,8 +19,14 @@ const ListPrice = ({ title, price }) => {
   return (
     <>
       <StyledList>
-        <Name_articulos>{title}</Name_articulos>
-        <Price_articulos>{formatterPeso.format(value) || "0"}</Price_articulos>
+        <img src={image} alt={title} />
+        <ListaContainer>
+          <Name_articulos>{title}</Name_articulos>
+          <Price_articulos>
+            {formatterPeso.format(value) || "0"}
+          </Price_articulos>
+        </ListaContainer>
+        <Button type="button">{promotion}</Button>
       </StyledList>
     </>
   );

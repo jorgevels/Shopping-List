@@ -10,6 +10,7 @@ const StyledHeader = styled.header`
   text-align: center;
   position: fixed;
   background: #f1d302;
+  z-index: 100000;
 
   & h3 {
     text-align: center;

@@ -2,7 +2,7 @@ import React from "react";
 import ListPrice from "../../components/ListPrice";
 import PageLoading from "../../components/PageLoading";
 import useInitialState from "../../hooks/useInitialState";
-import Container_lista from "./styles";
+import { Container_lista, Title_lista } from "./styles";
 
 /* const API = "https://us-central1-gndx-fake-api.cloudfunctions.net/api"; */
 
@@ -17,8 +17,9 @@ const Price = () => {
     <PageLoading />
   ) : (
     <>
+      <Title_lista>Lista de precios</Title_lista>
+
       <Container_lista>
-        <h3>Lista de precios</h3>
         {initialState.products.map((item) => (
           <ListPrice key={item.id} {...item} />
         ))}

@@ -9,6 +9,7 @@ const Select = styled.select`
   border: 1px solid #ebebeb;
   border-radius: 4px;
   text-align: center;
+  z-index: 100000;
   ${above.small`
   font-size:10px;
   
@@ -30,6 +31,7 @@ const Input = styled.input`
   padding-left: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
+  z-index: 100000;
 
   ${above.small`
   font-size:13px;
@@ -58,6 +60,7 @@ const Container = styled.form`
   margin-top: 55px;
   line-height: 27px;
   position: fixed;
+  z-index: 100000;
   ${above.small`
   font-size:10px;
   
@@ -91,6 +94,7 @@ const Containers = styled.div`
   height: 20px;
   margin-top: 86px;
   position: fixed;
+  z-index: 100000;
 `;
 
 const Button = styled.button`

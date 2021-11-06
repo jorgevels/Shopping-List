@@ -1,12 +1,28 @@
 import styled from "styled-components";
-/* import { above, colors } from "@styles/GlobalStyle"; */
+import { above, colors } from "@styles/GlobalStyle";
 
 const Container_lista = styled.div`
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 1rem;
+  grid-row-gap: 1em;
+  display: grid;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+
   text-align: center;
-  padding-top: 50px;
+  padding-top: 5px;
   padding-bottom: 42px;
-  ${"" /*  background-color: #fd3e81; */}
-  background: linear-gradient(#f7fff7, #ffe66d);
+  background: #fff;
 `;
 
-export default Container_lista;
+const Title_lista = styled.h3`
+  padding-top: 50px;
+  font-size: 18px;
+  color: ${colors.obscure};
+  text-align: center;
+`;
+
+export { Container_lista, Title_lista };
