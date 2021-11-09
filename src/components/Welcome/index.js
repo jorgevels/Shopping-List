@@ -17,17 +17,11 @@ export default function Welcome() {
     return todos.filter((todo) => todo.complete === false);
   };
 
-  const deleteTodo = () => {
-    setTodos(swalDelete());
-    setTodos(newTodosComplete());
-  };
-
   const swalDelete = () => {
     Swal.fire({
       title: "Estas seguro?",
       text: "No podras recuperar los articulos de la lista!",
       icon: "warning",
-
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -40,6 +34,19 @@ export default function Welcome() {
     });
   };
 
+  const swalWiltoutSelection = () => {
+    todos.find((todo) => todo.complete)
+      ? swalDelete()
+      : Swal.fire(
+          "Sin seleccion ",
+          "Debes selecionar almenenos un articulo?",
+          "info"
+        );
+  };
+  const HandleDeleteClick = (e) => {
+    todos.find((todo) => todo.complete) ? swalDelete() : swalWiltoutSelection();
+  };
+
   return (
     <>
       {todos.length === 0 ? (
@@ -50,7 +57,7 @@ export default function Welcome() {
         </Title>
       ) : (
         <ContainerFooter>
-          <Button onClick={swalDelete}>Delete</Button>
+          <Button onClick={HandleDeleteClick}>Delete</Button>
         </ContainerFooter>
       )}
     </>
