@@ -18,22 +18,24 @@ export default function Welcome() {
   };
 
   const deleteTodo = () => {
-    
+    setTodos(swalDelete());
     setTodos(newTodosComplete());
   };
 
   const swalDelete = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Estas seguro?",
+      text: "No podras recuperar los articulos de la lista!",
       icon: "warning",
+
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Borrar",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        setTodos(newTodosComplete());
+        Swal.fire("Eliminado!", "Articulos borrados.", "success");
       }
     });
   };
@@ -48,7 +50,7 @@ export default function Welcome() {
         </Title>
       ) : (
         <ContainerFooter>
-          <Button onClick={deleteTodo}>Delete</Button>
+          <Button onClick={swalDelete}>Delete</Button>
         </ContainerFooter>
       )}
     </>
