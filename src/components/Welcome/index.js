@@ -1,14 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "@context/DataProvider";
-import { MdDelete } from "react-icons/md";
 import { ContainerFooter, Title, Button } from "./styles";
-/* import SweetAlert from "sweetalert-react" */
 import Swal from "sweetalert2";
-
-import SweetAlert from "react-bootstrap-sweetalert";
-const SIZE = "23px";
-const COLOR = "red";
-/* swal("Hello world!"); */
 
 export default function Welcome() {
   const [todos, setTodos] = useContext(DataContext);
@@ -20,7 +13,7 @@ export default function Welcome() {
   const swalDelete = () => {
     Swal.fire({
       title: "Estas seguro?",
-      text: "No podras recuperar los articulos de la lista!",
+      text: "No podras recuperar los articulos eliminados!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -29,7 +22,7 @@ export default function Welcome() {
     }).then((result) => {
       if (result.isConfirmed) {
         setTodos(newTodosComplete());
-        Swal.fire("Eliminado!", "Articulos borrados.", "success");
+        Swal.fire("Eliminado!", "Articulos eliminados.", "success");
       }
     });
   };
@@ -38,12 +31,12 @@ export default function Welcome() {
     todos.find((todo) => todo.complete)
       ? swalDelete()
       : Swal.fire(
-          "Sin seleccion ",
-          "Debes selecionar almenenos un articulo?",
+          "Ninguna selección ",
+          "Debes seleccionar almenenos un articulo!",
           "info"
         );
   };
-  const HandleDeleteClick = (e) => {
+  const HandleDeleteClick = () => {
     todos.find((todo) => todo.complete) ? swalDelete() : swalWiltoutSelection();
   };
 
