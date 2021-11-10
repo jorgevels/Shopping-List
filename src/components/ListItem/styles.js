@@ -9,17 +9,24 @@ const List = styled.select`
   border: 1px solid #ebebeb;
   border-radius: 4px;
 `;
-
 const Input = styled.input`
+  padding: 2px;
+  text-align: left;
+  align-content: center;
+  line-height: 2.3;
+  background: orange;
+  color: red;
+  ${"" /* border: 0px solid transparent; */}
+  border: 1px solid #ebebeb;
+`;
+
+const InputCheckBox = styled.input`
   width: 100%;
   height: 28px;
-  ${"" /* margin-bottom: 15px; */}
-  margin-top:10px;
+  margin-top: 10px;
   padding-left: 10px;
   border: 1px solid #ebebeb;
   border-radius: 4px;
-  background: orange;
-  color: red;
 `;
 
 const Button = styled.button`
@@ -36,4 +43,4 @@ const Button = styled.button`
   text-align: center;
 `;
 
-export { List, Input, Button };
+export { List, InputCheckBox, Input, Button };

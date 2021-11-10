@@ -32,7 +32,7 @@ export default function Welcome() {
       ? swalDelete()
       : Swal.fire(
           "Ninguna selección ",
-          "Debes seleccionar almenenos un articulo!",
+          "Debes seleccionar al menos un articulo!",
           "info"
         );
   };

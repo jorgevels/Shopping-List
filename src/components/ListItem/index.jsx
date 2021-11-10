@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdEdit, MdModeEdit, MdSave } from "react-icons/md";
-import { List, Input, Button } from "./styles";
+import { List, InputCheckBox, Input, Button } from "./styles";
 import "@styles/index.css";
 
 const SIZE = "25px";
@@ -45,7 +45,7 @@ export default function ListItem({
   if (onEdit) {
     return (
       <div className="listaX">
-        <Input
+        <InputCheckBox
           type="checkbox"
           id={id}
           checked={todo.complete}
@@ -87,7 +87,7 @@ export default function ListItem({
           className={todo.complete ? "active" : ""}
           className="itemsx"
         >
-          <Input
+          <InputCheckBox
             type="checkbox"
             id={id}
             checked={todo.complete}
