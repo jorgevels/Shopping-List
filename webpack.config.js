@@ -64,15 +64,15 @@ module.exports = {
       filename: "assets/[name].css",
     }),
 
-    /* new FaviconsWebpackPlugin("./src/assets/favicon.png"), */
+    new FaviconsWebpackPlugin("./src/assets/favicon.png"),
 
-    new FaviconsWebpackPlugin({
+    /*  new FaviconsWebpackPlugin({
       logo: "./src/assets/favicon.png",
       favicons: {
         background: "#f8e808",
         theme_color: "#b1a",
       },
-    }),
+    }), */
 
     new WorkboxWebpackPlugin.GenerateSW({
       runtimeCaching: [

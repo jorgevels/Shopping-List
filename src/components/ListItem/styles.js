@@ -18,6 +18,7 @@ const Input = styled.input`
   color: red;
   ${"" /* border: 0px solid transparent; */}
   border: 1px solid #ebebeb;
+  border-radius: 4px;
 `;
 
 const InputCheckBox = styled.input`

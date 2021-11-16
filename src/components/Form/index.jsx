@@ -66,7 +66,7 @@ export default function FormInput() {
     <>
       <Container>
         <div className="item">
-          <div className="idName">Selecion</div>
+          <div className="idName">Selección</div>
         </div>
         <div className="item">
           <div className="idName">Nombre del Articulo</div>
@@ -100,6 +100,7 @@ export default function FormInput() {
             type="text"
             name="articulo"
             id="articulo"
+            required
             list={"LisArticulos"}
             ref={todoInput}
             placeholder="Ingresa un articulo"
@@ -110,6 +111,7 @@ export default function FormInput() {
           <Select
             value={cantidadName}
             onChange={(e) => setCantidadName(e.target.value.toLowerCase())}
+            required
           >
             <option value=""> </option>
             <option value="1">1</option>
@@ -141,16 +143,17 @@ export default function FormInput() {
           <Select
             value={unidadName}
             onChange={(e) => setUnidadName(e.target.value)}
+            required
           >
             <option value=""> </option>
             <option value="LB">LB</option>
             <option value="KL">KL</option>
-            <option value="Unidad">Unidad</option>
             <option value="PK">PK</option>
             <option value="BL">BL</option>
-            <option value="Caja">Caja</option>
             <option value="LT">LT</option>
             <option value="CB">CB</option>
+            <option value="Caja">Caja</option>
+            <option value="Unidad">Unidad</option>
           </Select>
 
           <Button type="submit">
