@@ -42,7 +42,7 @@ const Header_icons = styled.div`
   & p {
     color: white;
     margin-top: -8px;
-    font-size: 10px;
+    font-size: 12px;
 
     width: 15px;
     margin-left: 8px;

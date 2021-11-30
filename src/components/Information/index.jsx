@@ -1,5 +1,6 @@
 import React from "react";
 import Swal from "sweetalert2";
+import "animate.css";
 
 const index = () => {
   return Swal.fire({
@@ -8,6 +9,7 @@ const index = () => {
       "https://res.cloudinary.com/imagesfull/image/upload/v1594676015/like/favicon-Info_pkpykw.ico",
 
     title: `<div style=" font-size: 20px; z-index:5000000">Mercando</div>`,
+
     html: `<div style="text-align: left; font-size: 16px"><strong>1.</strong>No más listas de compras en papel.</div>
         <div style="text-align: left; font-size: 16px"><strong>2.</strong>Con esta PWA podras crear tus listas de compras desde tu teléfono.</div>
                    <div style="text-align: left; font-size: 16px"><strong>3.</strong>Con el botón del signo más, podras agregar tus artículos a una lista muy cool.</div>
@@ -18,6 +20,12 @@ const index = () => {
                    <br>
                    <div style="text-align: right;"><strong>Dev.</strong> Jorge Velasquez 😉</div>
                    `,
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
   });
 };
 

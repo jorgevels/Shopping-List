@@ -152,8 +152,9 @@ export default function FormInput() {
             <option value="BL">BL</option>
             <option value="LT">LT</option>
             <option value="CB">CB</option>
-            <option value="Caja">Caja</option>
-            <option value="Unidad">Unidad</option>
+            <option value="Caj">Caj</option>
+            <option value="Ud">Ud</option>
+            <option value="Uds">Uds</option>
           </Select>
 
           <Button type="submit">

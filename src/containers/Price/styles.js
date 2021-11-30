@@ -13,13 +13,13 @@ const Container_lista = styled.div`
   display: grid;
 
   text-align: center;
-  padding-top: 5px;
+  padding-top: 83px;
   padding-bottom: 42px;
   background: #fff;
 `;
 
 const Title_lista = styled.h3`
-  padding-top: 50px;
+  ${"" /*  padding-top: 50px; */}
   font-size: 18px;
   color: ${colors.obscure};
   text-align: center;

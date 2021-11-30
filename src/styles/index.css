@@ -277,6 +277,23 @@ input[type='checkbox']:checked:before {
   color: #fff;
 } */
 
+.Header-list {
+  display: grid;
+  padding-top: 50px;
+  background: #ffffff;
+  width: 100%;
+  grid-template-columns:
+    1fr minmax(160px, 1fr) minmax(40px, 1fr)
+     ;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index:100;
+}
+
+.Link-header-list {
+  padding-left: 20px;
+}
 
 
 .table-lista .lista button,

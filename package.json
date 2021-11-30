@@ -9,6 +9,7 @@
     "start": "webpack serve  --open  --config webpack.config.dev.js"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^0.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "favicons": "^6.2.2",
