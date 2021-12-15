@@ -64,38 +64,38 @@ module.exports = {
       filename: "assets/[name].css",
     }),
 
-    new FaviconsWebpackPlugin("./src/assets/favicon.png"),
+    /*  new FaviconsWebpackPlugin("./src/assets/favicon.png"), */
 
-    /*  new FaviconsWebpackPlugin({
+    new FaviconsWebpackPlugin({
       logo: "./src/assets/favicon.png",
       favicons: {
         background: "#f8e808",
         theme_color: "#b1a",
       },
-    }), */
+    }),
 
     new WorkboxWebpackPlugin.GenerateSW({
       runtimeCaching: [
         {
           urlPattern: new RegExp(
-            "https://maps.arcgis.com/sharing/rest/content/items/3ddd6c4932d649d6996db442e920ceb9/data|res.cloudinary.com"
+            "https://cloudinary.com/console/c-7e2ed658e0924b0e0fa252fbfa0813/media_library/folders/be740a224208527f81d0eca2462420aaff"
           ),
           handler: "CacheFirst",
           options: {
-            cacheName: "images",
+            cacheName: "images_Articles",
           },
         },
         {
           // Cache para la API
           urlPattern: new RegExp(
-            "https://api-covi-19.jorgevelasquez006.now.sh/API/covi19.json|https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/brief|https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest?iso2=CO"
+            "https://listacompras-ts.herokuapp.com/api/v1"
           ),
           // Le decimos que primero valla a la red antes de ir a la cache
           // para tener los datos actulizados
           handler: "NetworkFirst",
           //Le pasamos el nombre de la cache api
           options: {
-            cacheName: "api",
+            cacheName: "api_Articles",
           },
         },
       ],
