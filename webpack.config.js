@@ -2,7 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifestPlugin = require("webpack-pwa-manifest");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+/* const WorkboxWebpackPlugin = require("workbox-webpack-plugin"); */
+const { InjectManifest } = require("workbox-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -74,32 +75,11 @@ module.exports = {
       },
     }),
 
-    new WorkboxWebpackPlugin.GenerateSW({
-      runtimeCaching: [
-        {
-          urlPattern: new RegExp(
-            "https://cloudinary.com/console/c-7e2ed658e0924b0e0fa252fbfa0813/media_library/folders/be740a224208527f81d0eca2462420aaff"
-          ),
-          handler: "CacheFirst",
-          options: {
-            cacheName: "images_Articles",
-          },
-        },
-        {
-          // Cache para la API
-          urlPattern: new RegExp(
-            "https://listacompras-ts.herokuapp.com/api/v1"
-          ),
-          // Le decimos que primero valla a la red antes de ir a la cache
-          // para tener los datos actulizados
-          handler: "NetworkFirst",
-          //Le pasamos el nombre de la cache api
-          options: {
-            cacheName: "api_Articles",
-          },
-        },
-      ],
+    new InjectManifest({
+      swSrc: "./src/src-sw.js",
+      swDest: "sw.js",
     }),
+
     new CleanWebpackPlugin(),
     new ImageMinimizerPlugin({
       minimizerOptions: {
