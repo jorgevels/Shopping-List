@@ -11,14 +11,14 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
-
 importScripts(
-  "autoprecache-manifest.d8bf1ebd40b291bf5a82c4a98551b9b2.js"
+  "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"
 );
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
+importScripts("./precache-manifest.865eb277cf07490c16e564afcd01d67c.js");
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
 });
@@ -31,5 +31,19 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/https:\/\/cloudinary.com\/console\/c-7e2ed658e0924b0e0fa252fbfa0813\/media_library\/folders\/be740a224208527f81d0eca2462420aaff/, new workbox.strategies.CacheFirst({ "cacheName":"images_Articles", plugins: [] }), 'GET');
-workbox.routing.registerRoute(/https:\/\/listacompras-ts.herokuapp.com\/api\/v1/, new workbox.strategies.NetworkFirst({ "cacheName":"api_Articles", plugins: [] }), 'GET');
+workbox.routing.registerRoute(
+  /https:\/\/cloudinary.com\/console\/c-7e2ed658e0924b0e0fa252fbfa0813\/media_library\/folders\/be740a224208527f81d0eca2462420aaff/,
+  new workbox.strategies.CacheFirst({
+    cacheName: "images_Articles",
+    plugins: [],
+  }),
+  "GET"
+);
+workbox.routing.registerRoute(
+  /https:\/\/listacompras-ts.herokuapp.com\/api\/v1/,
+  new workbox.strategies.NetworkFirst({
+    cacheName: "api_Articles",
+    plugins: [],
+  }),
+  "GET"
+);
