@@ -82,6 +82,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
     chunkFilename: "[name].bundle.js",
+    publicPath: "/",
   },
 
   // Este elemento resulve las extensiones que vamos a utilizar

@@ -3,7 +3,7 @@
   "name": "Mercando",
   "version": "0.1.0",
   "private": true,
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js",
     "prod": "NODE_ENV=production webpack --mode=production --config webpack.config.js",
