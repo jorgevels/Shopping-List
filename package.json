@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js",
-    "prod": "NODE_ENV=production webpack --mode=production",
+    "prod": "NODE_ENV=production webpack --mode=production --config webpack.config.js",
     "start": "webpack serve  --open  --config webpack.config.dev.js"
   },
   "dependencies": {
