@@ -64,8 +64,8 @@ registerRoute(
  */
 registerRoute(
   ({ url }) =>
-    url.origin === "https://api.themoviedb.org" &&
-    url.pathname.startsWith("/3/discover/tv"),
+    url.origin === "https://listacompras-ts.herokuapp.com" &&
+    url.pathname.startsWith("/api/v1"),
   new StaleWhileRevalidate({
     cacheName: "movie-api-response",
     plugins: [
