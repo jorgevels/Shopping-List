@@ -9,6 +9,68 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
+
+const webpackPlugins = [
+  // pasamo un objeto con la configuracion que necesitamos
+  new HtmlWebpackPlugin({
+    //Donde esta ubicado el template que tenemos
+    template: "./public/index.html",
+    filename: "./index.html",
+  }),
+
+  new Dotenv({
+    path: "./.env", // Path to .env file (this is the default)
+    systemvars: true,
+  }),
+
+  new WebpackPwaManifestPlugin({
+    //Le pasamos el objeto de configuracion
+    name: "MercandoApp ",
+    shortname: "Mercando",
+    description: "Mercando permite crear tus listas de compras.",
+    background_color: "#f8e808",
+    theme_color: "#b1a",
+
+    //Array iconos de la aplicacion
+    icons: [
+      {
+        src: path.resolve("src/assets/favicon.png"),
+        //Le pasamos todos los tamaños que requerimos
+        sizes: [192, 512],
+      },
+    ],
+  }),
+  new MiniCssExtractPlugin({
+    filename: "assets/[name].css",
+  }),
+
+  /*  new FaviconsWebpackPlugin("./src/assets/favicon.png"), */
+
+  new FaviconsWebpackPlugin({
+    logo: "./src/assets/favicon.png",
+    favicons: {
+      background: "#f8e808",
+      theme_color: "#b1a",
+    },
+  }),
+
+  new CleanWebpackPlugin(),
+  new ImageMinimizerPlugin({
+    minimizerOptions: {
+      plugins: [["optipng", { optimizationLevel: 5 }]],
+    },
+  }),
+];
+
+if ("production" === process.env.NODE_ENV) {
+  webpackPlugins.push(
+    new InjectManifest({
+      swSrc: "./src/src-sw.js",
+      swDest: "sw.js",
+    })
+  );
+}
 
 module.exports = {
   entry: {
@@ -34,59 +96,6 @@ module.exports = {
       "@assets": path.resolve(__dirname, "src/assets/"),
     },
   },
-
-  // Se añaden los plugins que necesitamos
-  plugins: [
-    // pasamo un objeto con la configuracion que necesitamos
-    new HtmlWebpackPlugin({
-      //Donde esta ubicado el template que tenemos
-      template: "./public/index.html",
-      filename: "./index.html",
-    }),
-
-    new WebpackPwaManifestPlugin({
-      //Le pasamos el objeto de configuracion
-      name: "MercandoApp ",
-      shortname: "Mercando",
-      description: "Mercando permite crear tus listas de compras.",
-      background_color: "#f8e808",
-      theme_color: "#b1a",
-
-      //Array iconos de la aplicacion
-      icons: [
-        {
-          src: path.resolve("src/assets/favicon.png"),
-          //Le pasamos todos los tamaños que requerimos
-          sizes: [192, 512],
-        },
-      ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: "assets/[name].css",
-    }),
-
-    /*  new FaviconsWebpackPlugin("./src/assets/favicon.png"), */
-
-    new FaviconsWebpackPlugin({
-      logo: "./src/assets/favicon.png",
-      favicons: {
-        background: "#f8e808",
-        theme_color: "#b1a",
-      },
-    }),
-
-    new InjectManifest({
-      swSrc: "./src/src-sw.js",
-      swDest: "sw.js",
-    }),
-
-    new CleanWebpackPlugin(),
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [["optipng", { optimizationLevel: 5 }]],
-      },
-    }),
-  ],
 
   optimization: {
     minimize: true,
@@ -166,4 +175,5 @@ module.exports = {
       },
     ],
   },
+  plugins: webpackPlugins,
 };
