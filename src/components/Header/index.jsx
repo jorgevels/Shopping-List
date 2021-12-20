@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { StyledHeader, Header_icons } from "./styles";
+import { StyledHeader, Header_icons, Title } from "./styles";
 import { DataContext } from "@context/DataProvider";
 import { FiList, FiShoppingCart } from "react-icons/fi";
 import "@styles/index.css";
+import Logo from "../../assets/favicon.png";
 
 const SIZE = "25px";
 
-function Header() {
+const App = () => {
   const [todos] = useContext(DataContext);
 
   const newTodosComplete = () => {
@@ -32,28 +33,20 @@ function Header() {
             <FiShoppingCart size={SIZE} />
           </div>
         </Header_icons>
-        <div className="Title">
-          {/* <p>Mercando</p> */}
-          <p>...</p>
-          {/* <Link to="/">
-            <Title title="Mercando v2" />
-            🧧
-          </Link> */}
+        {/* <div className="Title">
+        </div> */}
+        <Title>
           <Link to="/">
-            <p>
-              <span>Merc</span>
-              andoxxx
-            </p>
+            <p>Mercando</p>
+            {/*  <img className="Logo_header" src={Logo} alt="logo" /> */}
           </Link>
-        </div>
+        </Title>
 
-        {/* <h3>Mercando</h3> */}
-        {/*  <h3>Promocio</h3> */}
         <div className="header-container-promo ">
           <div className="header-anuncio-promo">
-            <p>Promociones</p>
-
-            <Link to="/price">💰</Link>
+            <Link to="/price">
+              <p>Promociones</p>
+            </Link>
           </div>
 
           <div className="header-container-promo-list">
@@ -76,6 +69,6 @@ function Header() {
       </StyledHeader>
     </>
   );
-}
+};
 
-export default Header;
+export default App;

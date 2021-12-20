@@ -75,13 +75,14 @@ if ("production" === process.env.NODE_ENV) {
 module.exports = {
   entry: {
     home: "./src/index.js",
-    header: "./src/Header/index.js",
+    /*  header: "./src/Header/index.js", */
   },
 
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
     chunkFilename: "[name].bundle.js",
+    publicPath: "/",
   },
 
   // Este elemento resulve las extensiones que vamos a utilizar
