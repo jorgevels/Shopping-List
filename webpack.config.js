@@ -98,7 +98,7 @@ module.exports = {
     },
   },
 
-  optimization: {
+  /* optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     splitChunks: {
@@ -126,7 +126,7 @@ module.exports = {
       },
     },
   },
-
+ */
   module: {
     rules: [
       {
