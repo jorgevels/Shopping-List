@@ -10,6 +10,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const webpackPlugins = [
   // pasamo un objeto con la configuracion que necesitamos
@@ -24,23 +25,15 @@ const webpackPlugins = [
     systemvars: true,
   }),
 
-  new WebpackPwaManifestPlugin({
-    //Le pasamos el objeto de configuracion
-    name: "MercandoApp ",
-    shortname: "Mercando",
-    description: "Mercando permite crear tus listas de compras.",
-    background_color: "#f8e808",
-    theme_color: "#b1a",
-
-    //Array iconos de la aplicacion
-    icons: [
-      {
-        src: path.resolve("src/assets/favicon.png"),
-        //Le pasamos todos los tamaños que requerimos
-        sizes: [192, 512],
-      },
+  new CopyPlugin({
+    patterns: [
+      { from: "./src/assets/favicon.ico", to: "" },
+      { from: "./src/manifest.json", to: "" },
+      { from: "./src/assets/android-chrome-192x192.png", to: "" },
+      { from: "./src/assets/android-chrome-512x512.png", to: "" },
     ],
   }),
+
   new MiniCssExtractPlugin({
     filename: "assets/[name].css",
   }),
