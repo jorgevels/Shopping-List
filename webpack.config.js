@@ -31,6 +31,8 @@ const webpackPlugins = [
       { from: "./src/manifest.json", to: "" },
       { from: "./src/assets/android-chrome-192x192.png", to: "" },
       { from: "./src/assets/android-chrome-512x512.png", to: "" },
+      { from: "./src/assets//apple-touch-icon-167x167.png", to: "" },
+      { from: "./src/assets/apple-touch-icon-180x180.png", to: "" },
     ],
   }),
 
@@ -75,7 +77,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
     chunkFilename: "[name].bundle.js",
-    publicPath: "/",
+    /* publicPath: "/", */
   },
 
   // Este elemento resulve las extensiones que vamos a utilizar
@@ -91,7 +93,7 @@ module.exports = {
     },
   },
 
-  /* optimization: {
+  optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     splitChunks: {
@@ -119,7 +121,7 @@ module.exports = {
       },
     },
   },
- */
+
   module: {
     rules: [
       {
@@ -143,25 +145,13 @@ module.exports = {
       },
       {
         test: /\.(s*)css$/,
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
-          "css-loader",
-          /*  "sass-loader", */
-        ],
+        use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset",
       },
-      /* {
-        test: /\.(png|gif|jpg|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: { name: "assets/[hash].[ext]" },
-          },
-        ],
-      }, */
+
       {
         test: /\.tsx?$/,
         use: "ts-loader",
