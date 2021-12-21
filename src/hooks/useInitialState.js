@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-/* const corsAnywhere = "https://cors-anywhere.herokuapp.com/"; */
-
 const useInitialState = (url) => {
   const [tvShows, setTvShows] = useState([]);
 
